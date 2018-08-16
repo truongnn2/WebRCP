@@ -1,0 +1,282 @@
+/* general purpose styles */
+html {
+    height: 100%;
+}
+div {
+    clear: both;
+}
+
+body
+{
+    background-color: #ced1d4;
+    font-family: verdana, helvetica, arial, sans-serif;
+    font-size: 16px;
+    margin: 0px;
+    padding: 4%;
+}
+
+table
+{
+    border: 0px none Black;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    table-layout: fixed;
+    width: 1000px;
+    height: 100px;
+}
+
+td
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+a
+{
+    color: #800000;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+
+b
+{
+    color: #800000;
+    font-weight: bold;
+}
+
+hr
+{
+    border: 1px solid #800000;
+}
+
+img
+{
+    border: 0px none #800000;
+}
+
+wbr
+{
+    display: inline-block;
+}
+
+/* body table-Container for all content */
+.bodyTable
+{
+    margin: 0px auto;
+    overflow: hidden;
+}
+.bodyData
+{
+    background-repeat: no-repeat;
+    border: 0px none Silver;
+}
+
+.content {
+    margin: auto;
+    background-color: white;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    color: black;
+    padding: 5px;
+}
+
+/* logoTable styles */
+.logoTable
+{
+    height: 60px;
+}
+.logoData
+{ padding: 0px 0px 0px 10px; }
+
+/* Title table styles */
+.titleTable
+{
+    height: 32px;
+}
+.titleData
+{
+    color: White;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 9px 10px;
+    text-align: center;
+}
+
+/* blockDescTable styles */
+.contentTable
+{ }
+.contentData
+{
+    padding: 5px 10px;
+}
+
+/* infoTable styles */
+.infoTable
+{ }
+.infoData
+{
+    height: 14px;
+    padding: 0px 15px;
+}
+
+.confirmData {
+    height: 14px;
+    padding: 0px 15px;
+    width: 450px;
+}
+
+.formData {
+    margin: 0px;
+    padding: 0px 15px;
+    table-layout: auto;
+    text-align: left;
+} 
+
+.textfield {
+    width: 200px;
+} 
+
+.button {
+    color: #800000;
+    font: bold small verdana, helvetica, arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    width: 475px;
+} 
+.loginbutton {
+    color: #800000;
+    font: bold small verdana, helvetica, arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    width: 155px;
+} 
+
+/* optionsTable styles */
+.optionsTable
+{ }
+.optionsData
+{
+    height: 12px;
+    padding: 0px 15px;
+}
+
+/* policyTable styles */
+.policyTable
+{ }
+.policyHeading
+{
+    color: #800000;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+.policyData
+{
+    color: Black;
+    font-size: 12px;
+    padding: 5px 15px;
+    text-align: justify;
+}
+
+/* cACertTable styles */
+.cACertTable
+{ }
+.cACertData
+{
+    padding: 5px 15px;
+    text-align: right;
+}
+
+/* actionTable styles */
+.actionTable
+{ }
+.actionData
+{
+    padding: 5px 10px;
+}
+.actionTitle
+{
+    color: #800000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* footTable styles */
+.footTable
+{ }
+.footData
+{
+    color: Gray;
+    font-size: 9px;
+    font-style: italic;
+    padding: 2px;
+    text-align: right;
+}
+
+/* style for the helpdesk information text */
+.helpDeskData
+{
+    color: White;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 9px 10px;
+    text-align: center;
+}
+
+/* for proxy errors (FailureDescription) */
+.proxyErrorData
+{
+    color: Gray;
+    font-size: 9px;
+    padding: 10px 0px 0px 0px;
+}
+
+/* .nodisplay used to supress blank,empty (-),false or 0 fields */
+
+.nodisplay {
+    display: none;
+}
+
+.nodisplay- {
+    display: none;
+}
+
+.nodisplay0 {
+    display: none;
+}
+
+.nodisplayfalse {
+    display: none;
+}
+.nodisplayfalsefalse {
+    display: none;
+}
+.nodisplayfalsefalsefalse {
+    display: none;
+}
+
+.notdisplaytrue {
+    display: none;
+}
+
+.nodisplay0\.0\.0\.0 {
+    display: none;
+}
+
+.nodisplay255\.255\.255\.255 {
+    display: none;
+}
+
+.nodisplay0\:0\:0\:0\:0\:0\:0\:0 {
+    display: none;
+}
+
+/*EOF*/
+
