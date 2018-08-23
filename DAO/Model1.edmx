@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RCPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.AboutUs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AboutUs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Intro" Type="ntext" />
+          <Property Name="IntroE" Type="ntext" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="ContentE" Type="ntext" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="AddressE" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Website" Type="nvarchar" MaxLength="100" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.BoxAd' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BoxAd">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Url" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Category" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.CatServices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CatServices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.CatSubServices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CatSubServices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="IDCatServices" Type="int" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Contactus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Contactus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="DatePost" Type="datetime" />
+          <Property Name="Donhang" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Type" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Employment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Content" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.GalleryImage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GalleryImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Giamgia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Giamgia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.GioiThieu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GioiThieu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.LinkWebsite' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LinkWebsite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Website" Type="nvarchar" MaxLength="500" />
+          <Property Name="Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.MenuSub' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MenuSub">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="IDMenu" Type="int" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.MenuSubSub' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MenuSubSub">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="IDMenu" Type="int" />
+          <Property Name="IDMenuSub" Type="int" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.News' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="TitleE" Type="nvarchar" MaxLength="200" />
+          <Property Name="Intro" Type="ntext" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="ContentE" Type="ntext" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="Location" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Products' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Category" Type="tinyint" />
+          <Property Name="CategoryDetail" Type="tinyint" />
+          <Property Name="CategoryDetailSub" Type="tinyint" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="TitleE" Type="nvarchar" MaxLength="200" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="ContentE" Type="ntext" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="IsHot" Type="tinyint" />
+          <Property Name="Price" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsShowPrice" Type="tinyint" />
+          <Property Name="Intro" Type="ntext" />
+          <Property Name="Location" Type="int" />
+          <Property Name="IsShowDefault" Type="tinyint" />
+          <Property Name="FileAttach" Type="nvarchar" MaxLength="500" />
+          <Property Name="ViewCount" Type="int" />
+          <Property Name="PromotionPrice" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsMostView" Type="tinyint" />
+          <Property Name="IsNew" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Category" Type="int" />
+          <Property Name="CategorySub" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="TitleE" Type="nvarchar" MaxLength="200" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="ContentE" Type="ntext" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="Location" Type="int" />
+          <Property Name="FileAttach" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsHot" Type="tinyint" />
+          <Property Name="IsHot1" Type="tinyint" />
+          <Property Name="IsHot2" Type="tinyint" />
+          <Property Name="IsHot3" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Solution' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Solution">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="TitleE" Type="nvarchar" MaxLength="200" />
+          <Property Name="Content" Type="ntext" />
+          <Property Name="ContentE" Type="ntext" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="Location" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.SupportOnline' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SupportOnline">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="500" />
+          <Property Name="NickSkype" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Url" Type="ntext" />
+          <Property Name="IsShowDefaut" Type="tinyint" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="RCPModelStoreContainer">
+          <EntitySet Name="AboutUs" EntityType="Self.AboutUs" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AboutUs].[ID] AS [ID], 
+    [AboutUs].[Intro] AS [Intro], 
+    [AboutUs].[IntroE] AS [IntroE], 
+    [AboutUs].[Content] AS [Content], 
+    [AboutUs].[ContentE] AS [ContentE], 
+    [AboutUs].[Address] AS [Address], 
+    [AboutUs].[AddressE] AS [AddressE], 
+    [AboutUs].[Phone] AS [Phone], 
+    [AboutUs].[Fax] AS [Fax], 
+    [AboutUs].[Email] AS [Email], 
+    [AboutUs].[Website] AS [Website], 
+    [AboutUs].[Photo] AS [Photo]
+    FROM [dbo].[AboutUs] AS [AboutUs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Admin" EntityType="Self.Admin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Admin].[AdminID] AS [AdminID], 
+    [Admin].[Username] AS [Username], 
+    [Admin].[Password] AS [Password]
+    FROM [dbo].[Admin] AS [Admin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BoxAd" EntityType="Self.BoxAd" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BoxAd].[ID] AS [ID], 
+    [BoxAd].[Photo] AS [Photo], 
+    [BoxAd].[Url] AS [Url], 
+    [BoxAd].[Status] AS [Status], 
+    [BoxAd].[Category] AS [Category], 
+    [BoxAd].[Location] AS [Location]
+    FROM [dbo].[BoxAd] AS [BoxAd]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CatServices" EntityType="Self.CatServices" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CatServices].[ID] AS [ID], 
+    [CatServices].[Name] AS [Name], 
+    [CatServices].[NameE] AS [NameE], 
+    [CatServices].[Status] AS [Status], 
+    [CatServices].[Location] AS [Location]
+    FROM [dbo].[CatServices] AS [CatServices]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CatSubServices" EntityType="Self.CatSubServices" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CatSubServices].[ID] AS [ID], 
+    [CatSubServices].[Name] AS [Name], 
+    [CatSubServices].[NameE] AS [NameE], 
+    [CatSubServices].[IDCatServices] AS [IDCatServices], 
+    [CatSubServices].[Status] AS [Status], 
+    [CatSubServices].[Location] AS [Location]
+    FROM [dbo].[CatSubServices] AS [CatSubServices]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Contactus" EntityType="Self.Contactus" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Contactus].[ID] AS [ID], 
+    [Contactus].[Content] AS [Content], 
+    [Contactus].[Name] AS [Name], 
+    [Contactus].[Address] AS [Address], 
+    [Contactus].[Phone] AS [Phone], 
+    [Contactus].[Email] AS [Email], 
+    [Contactus].[Status] AS [Status], 
+    [Contactus].[DatePost] AS [DatePost], 
+    [Contactus].[Donhang] AS [Donhang]
+    FROM [dbo].[Contactus] AS [Contactus]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Customer" EntityType="Self.Customer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Customer].[ID] AS [ID], 
+    [Customer].[Name] AS [Name], 
+    [Customer].[Phone] AS [Phone], 
+    [Customer].[Email] AS [Email], 
+    [Customer].[Address] AS [Address], 
+    [Customer].[Status] AS [Status], 
+    [Customer].[Type] AS [Type], 
+    [Customer].[Location] AS [Location]
+    FROM [dbo].[Customer] AS [Customer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Employment" EntityType="Self.Employment" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employment].[ID] AS [ID], 
+    [Employment].[Content] AS [Content]
+    FROM [dbo].[Employment] AS [Employment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GalleryImage" EntityType="Self.GalleryImage" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GalleryImage].[ID] AS [ID], 
+    [GalleryImage].[Photo] AS [Photo], 
+    [GalleryImage].[Description] AS [Description]
+    FROM [dbo].[GalleryImage] AS [GalleryImage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Giamgia" EntityType="Self.Giamgia" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Giamgia].[ID] AS [ID], 
+    [Giamgia].[Content] AS [Content], 
+    [Giamgia].[Photo] AS [Photo]
+    FROM [dbo].[Giamgia] AS [Giamgia]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GioiThieu" EntityType="Self.GioiThieu" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GioiThieu].[ID] AS [ID], 
+    [GioiThieu].[Title] AS [Title], 
+    [GioiThieu].[Content] AS [Content], 
+    [GioiThieu].[Status] AS [Status], 
+    [GioiThieu].[Location] AS [Location]
+    FROM [dbo].[GioiThieu] AS [GioiThieu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LinkWebsite" EntityType="Self.LinkWebsite" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LinkWebsite].[ID] AS [ID], 
+    [LinkWebsite].[Website] AS [Website], 
+    [LinkWebsite].[Url] AS [Url], 
+    [LinkWebsite].[Status] AS [Status]
+    FROM [dbo].[LinkWebsite] AS [LinkWebsite]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Menu" EntityType="Self.Menu" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Menu].[ID] AS [ID], 
+    [Menu].[Name] AS [Name], 
+    [Menu].[NameE] AS [NameE], 
+    [Menu].[Status] AS [Status], 
+    [Menu].[Location] AS [Location]
+    FROM [dbo].[Menu] AS [Menu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MenuSub" EntityType="Self.MenuSub" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MenuSub].[ID] AS [ID], 
+    [MenuSub].[Name] AS [Name], 
+    [MenuSub].[NameE] AS [NameE], 
+    [MenuSub].[IDMenu] AS [IDMenu], 
+    [MenuSub].[Status] AS [Status], 
+    [MenuSub].[Location] AS [Location]
+    FROM [dbo].[MenuSub] AS [MenuSub]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MenuSubSub" EntityType="Self.MenuSubSub" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MenuSubSub].[ID] AS [ID], 
+    [MenuSubSub].[Name] AS [Name], 
+    [MenuSubSub].[NameE] AS [NameE], 
+    [MenuSubSub].[IDMenu] AS [IDMenu], 
+    [MenuSubSub].[IDMenuSub] AS [IDMenuSub], 
+    [MenuSubSub].[Status] AS [Status], 
+    [MenuSubSub].[Location] AS [Location]
+    FROM [dbo].[MenuSubSub] AS [MenuSubSub]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="News" EntityType="Self.News" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [News].[ID] AS [ID], 
+    [News].[Title] AS [Title], 
+    [News].[TitleE] AS [TitleE], 
+    [News].[Intro] AS [Intro], 
+    [News].[Content] AS [Content], 
+    [News].[ContentE] AS [ContentE], 
+    [News].[Photo] AS [Photo], 
+    [News].[Status] AS [Status], 
+    [News].[DateCreate] AS [DateCreate], 
+    [News].[Location] AS [Location]
+    FROM [dbo].[News] AS [News]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Products" EntityType="Self.Products" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Products].[ID] AS [ID], 
+    [Products].[Category] AS [Category], 
+    [Products].[CategoryDetail] AS [CategoryDetail], 
+    [Products].[CategoryDetailSub] AS [CategoryDetailSub], 
+    [Products].[Title] AS [Title], 
+    [Products].[TitleE] AS [TitleE], 
+    [Products].[Content] AS [Content], 
+    [Products].[ContentE] AS [ContentE], 
+    [Products].[Photo] AS [Photo], 
+    [Products].[Status] AS [Status], 
+    [Products].[DateCreate] AS [DateCreate], 
+    [Products].[IsHot] AS [IsHot], 
+    [Products].[Price] AS [Price], 
+    [Products].[IsShowPrice] AS [IsShowPrice], 
+    [Products].[Intro] AS [Intro], 
+    [Products].[Location] AS [Location], 
+    [Products].[IsShowDefault] AS [IsShowDefault], 
+    [Products].[FileAttach] AS [FileAttach], 
+    [Products].[ViewCount] AS [ViewCount], 
+    [Products].[PromotionPrice] AS [PromotionPrice], 
+    [Products].[IsMostView] AS [IsMostView], 
+    [Products].[IsNew] AS [IsNew]
+    FROM [dbo].[Products] AS [Products]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Services].[ID] AS [ID], 
+    [Services].[Category] AS [Category], 
+    [Services].[CategorySub] AS [CategorySub], 
+    [Services].[Title] AS [Title], 
+    [Services].[TitleE] AS [TitleE], 
+    [Services].[Content] AS [Content], 
+    [Services].[ContentE] AS [ContentE], 
+    [Services].[Photo] AS [Photo], 
+    [Services].[Status] AS [Status], 
+    [Services].[DateCreate] AS [DateCreate], 
+    [Services].[Location] AS [Location], 
+    [Services].[FileAttach] AS [FileAttach], 
+    [Services].[IsHot] AS [IsHot], 
+    [Services].[IsHot1] AS [IsHot1], 
+    [Services].[IsHot2] AS [IsHot2], 
+    [Services].[IsHot3] AS [IsHot3]
+    FROM [dbo].[Services] AS [Services]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Solution" EntityType="Self.Solution" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Solution].[ID] AS [ID], 
+    [Solution].[Title] AS [Title], 
+    [Solution].[TitleE] AS [TitleE], 
+    [Solution].[Content] AS [Content], 
+    [Solution].[ContentE] AS [ContentE], 
+    [Solution].[Photo] AS [Photo], 
+    [Solution].[Status] AS [Status], 
+    [Solution].[DateCreate] AS [DateCreate], 
+    [Solution].[Location] AS [Location]
+    FROM [dbo].[Solution] AS [Solution]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SupportOnline" EntityType="Self.SupportOnline" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SupportOnline].[ID] AS [ID], 
+    [SupportOnline].[Name] AS [Name], 
+    [SupportOnline].[NickName] AS [NickName], 
+    [SupportOnline].[NickSkype] AS [NickSkype], 
+    [SupportOnline].[Phone] AS [Phone], 
+    [SupportOnline].[Status] AS [Status]
+    FROM [dbo].[SupportOnline] AS [SupportOnline]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Video" EntityType="Self.Video" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Video].[ID] AS [ID], 
+    [Video].[Name] AS [Name], 
+    [Video].[Url] AS [Url], 
+    [Video].[IsShowDefaut] AS [IsShowDefaut], 
+    [Video].[Status] AS [Status], 
+    [Video].[Location] AS [Location], 
+    [Video].[Photo] AS [Photo]
+    FROM [dbo].[Video] AS [Video]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RCPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AboutU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Intro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IntroE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContentE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AddressE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BoxAd">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Category" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="CatService">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="CatSubService">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IDCatServices" Type="Int32" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Contactu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="DatePost" Type="DateTime" Precision="3" />
+          <Property Name="Donhang" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Type" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Employment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GalleryImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Giamgia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GioiThieu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="LinkWebsite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Website" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="MenuSub">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IDMenu" Type="Int32" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="MenuSubSub">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IDMenu" Type="Int32" />
+          <Property Name="IDMenuSub" Type="Int32" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TitleE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Intro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContentE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="Location" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="Byte" />
+          <Property Name="CategoryDetail" Type="Byte" />
+          <Property Name="CategoryDetailSub" Type="Byte" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TitleE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContentE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="IsHot" Type="Byte" />
+          <Property Name="Price" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsShowPrice" Type="Byte" />
+          <Property Name="Intro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="Int32" />
+          <Property Name="IsShowDefault" Type="Byte" />
+          <Property Name="FileAttach" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ViewCount" Type="Int32" />
+          <Property Name="PromotionPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsMostView" Type="Byte" />
+          <Property Name="IsNew" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="Int32" />
+          <Property Name="CategorySub" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TitleE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContentE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="Location" Type="Int32" />
+          <Property Name="FileAttach" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsHot" Type="Byte" />
+          <Property Name="IsHot1" Type="Byte" />
+          <Property Name="IsHot2" Type="Byte" />
+          <Property Name="IsHot3" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Solution">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TitleE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContentE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="Location" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SupportOnline">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NickName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NickSkype" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsShowDefaut" Type="Byte" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="RCPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AboutUs" EntityType="Self.AboutU" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="BoxAds" EntityType="Self.BoxAd" />
+          <EntitySet Name="CatServices" EntityType="Self.CatService" />
+          <EntitySet Name="CatSubServices" EntityType="Self.CatSubService" />
+          <EntitySet Name="Contactus" EntityType="Self.Contactu" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Employments" EntityType="Self.Employment" />
+          <EntitySet Name="GalleryImages" EntityType="Self.GalleryImage" />
+          <EntitySet Name="Giamgias" EntityType="Self.Giamgia" />
+          <EntitySet Name="GioiThieux" EntityType="Self.GioiThieu" />
+          <EntitySet Name="LinkWebsites" EntityType="Self.LinkWebsite" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="MenuSubs" EntityType="Self.MenuSub" />
+          <EntitySet Name="MenuSubSubs" EntityType="Self.MenuSubSub" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="Solutions" EntityType="Self.Solution" />
+          <EntitySet Name="SupportOnlines" EntityType="Self.SupportOnline" />
+          <EntitySet Name="Videos" EntityType="Self.Video" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RCPModelStoreContainer" CdmEntityContainer="RCPEntities">
+          <EntitySetMapping Name="AboutUs">
+            <EntityTypeMapping TypeName="RCPModel.AboutU">
+              <MappingFragment StoreEntitySet="AboutUs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="IntroE" ColumnName="IntroE" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ContentE" ColumnName="ContentE" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AddressE" ColumnName="AddressE" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="RCPModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BoxAds">
+            <EntityTypeMapping TypeName="RCPModel.BoxAd">
+              <MappingFragment StoreEntitySet="BoxAd">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CatServices">
+            <EntityTypeMapping TypeName="RCPModel.CatService">
+              <MappingFragment StoreEntitySet="CatServices">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameE" ColumnName="NameE" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CatSubServices">
+            <EntityTypeMapping TypeName="RCPModel.CatSubService">
+              <MappingFragment StoreEntitySet="CatSubServices">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameE" ColumnName="NameE" />
+                <ScalarProperty Name="IDCatServices" ColumnName="IDCatServices" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contactus">
+            <EntityTypeMapping TypeName="RCPModel.Contactu">
+              <MappingFragment StoreEntitySet="Contactus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DatePost" ColumnName="DatePost" />
+                <ScalarProperty Name="Donhang" ColumnName="Donhang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="RCPModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employments">
+            <EntityTypeMapping TypeName="RCPModel.Employment">
+              <MappingFragment StoreEntitySet="Employment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GalleryImages">
+            <EntityTypeMapping TypeName="RCPModel.GalleryImage">
+              <MappingFragment StoreEntitySet="GalleryImage">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Giamgias">
+            <EntityTypeMapping TypeName="RCPModel.Giamgia">
+              <MappingFragment StoreEntitySet="Giamgia">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GioiThieux">
+            <EntityTypeMapping TypeName="RCPModel.GioiThieu">
+              <MappingFragment StoreEntitySet="GioiThieu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LinkWebsites">
+            <EntityTypeMapping TypeName="RCPModel.LinkWebsite">
+              <MappingFragment StoreEntitySet="LinkWebsite">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="RCPModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameE" ColumnName="NameE" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuSubs">
+            <EntityTypeMapping TypeName="RCPModel.MenuSub">
+              <MappingFragment StoreEntitySet="MenuSub">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameE" ColumnName="NameE" />
+                <ScalarProperty Name="IDMenu" ColumnName="IDMenu" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuSubSubs">
+            <EntityTypeMapping TypeName="RCPModel.MenuSubSub">
+              <MappingFragment StoreEntitySet="MenuSubSub">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameE" ColumnName="NameE" />
+                <ScalarProperty Name="IDMenu" ColumnName="IDMenu" />
+                <ScalarProperty Name="IDMenuSub" ColumnName="IDMenuSub" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="RCPModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleE" ColumnName="TitleE" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ContentE" ColumnName="ContentE" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="RCPModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="CategoryDetail" ColumnName="CategoryDetail" />
+                <ScalarProperty Name="CategoryDetailSub" ColumnName="CategoryDetailSub" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleE" ColumnName="TitleE" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ContentE" ColumnName="ContentE" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="IsHot" ColumnName="IsHot" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IsShowPrice" ColumnName="IsShowPrice" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="IsShowDefault" ColumnName="IsShowDefault" />
+                <ScalarProperty Name="FileAttach" ColumnName="FileAttach" />
+                <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+                <ScalarProperty Name="PromotionPrice" ColumnName="PromotionPrice" />
+                <ScalarProperty Name="IsMostView" ColumnName="IsMostView" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="RCPModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="CategorySub" ColumnName="CategorySub" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleE" ColumnName="TitleE" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ContentE" ColumnName="ContentE" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="FileAttach" ColumnName="FileAttach" />
+                <ScalarProperty Name="IsHot" ColumnName="IsHot" />
+                <ScalarProperty Name="IsHot1" ColumnName="IsHot1" />
+                <ScalarProperty Name="IsHot2" ColumnName="IsHot2" />
+                <ScalarProperty Name="IsHot3" ColumnName="IsHot3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solutions">
+            <EntityTypeMapping TypeName="RCPModel.Solution">
+              <MappingFragment StoreEntitySet="Solution">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleE" ColumnName="TitleE" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ContentE" ColumnName="ContentE" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupportOnlines">
+            <EntityTypeMapping TypeName="RCPModel.SupportOnline">
+              <MappingFragment StoreEntitySet="SupportOnline">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="NickSkype" ColumnName="NickSkype" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videos">
+            <EntityTypeMapping TypeName="RCPModel.Video">
+              <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="IsShowDefaut" ColumnName="IsShowDefaut" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCP", "RCP\RCP.csproj", "{CFCE4366-1626-48BE-BB00-1B1C359E1F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{0BAD75E0-6126-4586-B07D-27DCF4280442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{C55C3A98-0394-4418-81B5-E54FCC132233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{CFCE4366-1626-48BE-BB00-1B1C359E1F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFCE4366-1626-48BE-BB00-1B1C359E1F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFCE4366-1626-48BE-BB00-1B1C359E1F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BAD75E0-6126-4586-B07D-27DCF4280442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAD75E0-6126-4586-B07D-27DCF4280442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAD75E0-6126-4586-B07D-27DCF4280442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAD75E0-6126-4586-B07D-27DCF4280442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C55C3A98-0394-4418-81B5-E54FCC132233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C55C3A98-0394-4418-81B5-E54FCC132233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C55C3A98-0394-4418-81B5-E54FCC132233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C55C3A98-0394-4418-81B5-E54FCC132233}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
