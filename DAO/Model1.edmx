@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RCPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RCPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RCP.dbo.AboutUs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AboutUs">
@@ -46,6 +46,21 @@ warning 6002: The table/view 'RCP.dbo.BoxAd' does not have a primary key defined
           <Property Name="Status" Type="tinyint" />
           <Property Name="Category" Type="tinyint" />
           <Property Name="Location" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RCP.dbo.Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="Location" Type="tinyint" />
+          <Property Name="Father" Type="int" />
+          <Property Name="GrandFather" Type="int" />
+          <Property Name="GreatGrandFather" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RCP.dbo.CatServices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -156,45 +171,6 @@ warning 6002: The table/view 'RCP.dbo.LinkWebsite' does not have a primary key d
           <Property Name="Status" Type="tinyint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RCP.dbo.Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="Menu">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
-          <Property Name="Status" Type="tinyint" />
-          <Property Name="Location" Type="tinyint" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RCP.dbo.MenuSub' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="MenuSub">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
-          <Property Name="IDMenu" Type="int" />
-          <Property Name="Status" Type="tinyint" />
-          <Property Name="Location" Type="tinyint" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RCP.dbo.MenuSubSub' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="MenuSubSub">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="NameE" Type="nvarchar" MaxLength="100" />
-          <Property Name="IDMenu" Type="int" />
-          <Property Name="IDMenuSub" Type="int" />
-          <Property Name="Status" Type="tinyint" />
-          <Property Name="Location" Type="tinyint" />
-        </EntityType>
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'RCP.dbo.News' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="News">
           <Key>
@@ -217,7 +193,7 @@ warning 6002: The table/view 'RCP.dbo.Products' does not have a primary key defi
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Category" Type="tinyint" />
           <Property Name="CategoryDetail" Type="tinyint" />
           <Property Name="CategoryDetailSub" Type="tinyint" />
@@ -340,6 +316,18 @@ warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined
     [BoxAd].[Location] AS [Location]
     FROM [dbo].[BoxAd] AS [BoxAd]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Category].[ID] AS [ID], 
+    [Category].[Name] AS [Name], 
+    [Category].[NameE] AS [NameE], 
+    [Category].[Status] AS [Status], 
+    [Category].[Location] AS [Location], 
+    [Category].[Father] AS [Father], 
+    [Category].[GrandFather] AS [GrandFather], 
+    [Category].[GreatGrandFather] AS [GreatGrandFather]
+    FROM [dbo].[Category] AS [Category]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="CatServices" EntityType="Self.CatServices" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [CatServices].[ID] AS [ID], 
@@ -420,36 +408,6 @@ warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined
     [LinkWebsite].[Url] AS [Url], 
     [LinkWebsite].[Status] AS [Status]
     FROM [dbo].[LinkWebsite] AS [LinkWebsite]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Menu" EntityType="Self.Menu" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Menu].[ID] AS [ID], 
-    [Menu].[Name] AS [Name], 
-    [Menu].[NameE] AS [NameE], 
-    [Menu].[Status] AS [Status], 
-    [Menu].[Location] AS [Location]
-    FROM [dbo].[Menu] AS [Menu]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="MenuSub" EntityType="Self.MenuSub" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [MenuSub].[ID] AS [ID], 
-    [MenuSub].[Name] AS [Name], 
-    [MenuSub].[NameE] AS [NameE], 
-    [MenuSub].[IDMenu] AS [IDMenu], 
-    [MenuSub].[Status] AS [Status], 
-    [MenuSub].[Location] AS [Location]
-    FROM [dbo].[MenuSub] AS [MenuSub]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="MenuSubSub" EntityType="Self.MenuSubSub" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [MenuSubSub].[ID] AS [ID], 
-    [MenuSubSub].[Name] AS [Name], 
-    [MenuSubSub].[NameE] AS [NameE], 
-    [MenuSubSub].[IDMenu] AS [IDMenu], 
-    [MenuSubSub].[IDMenuSub] AS [IDMenuSub], 
-    [MenuSubSub].[Status] AS [Status], 
-    [MenuSubSub].[Location] AS [Location]
-    FROM [dbo].[MenuSubSub] AS [MenuSubSub]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="News" EntityType="Self.News" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -546,8 +504,7 @@ warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined
     FROM [dbo].[Video] AS [Video]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RCPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -677,39 +634,6 @@ warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined
           <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Byte" />
         </EntityType>
-        <EntityType Name="Menu">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="Byte" />
-          <Property Name="Location" Type="Byte" />
-        </EntityType>
-        <EntityType Name="MenuSub">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IDMenu" Type="Int32" />
-          <Property Name="Status" Type="Byte" />
-          <Property Name="Location" Type="Byte" />
-        </EntityType>
-        <EntityType Name="MenuSubSub">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IDMenu" Type="Int32" />
-          <Property Name="IDMenuSub" Type="Int32" />
-          <Property Name="Status" Type="Byte" />
-          <Property Name="Location" Type="Byte" />
-        </EntityType>
         <EntityType Name="News">
           <Key>
             <PropertyRef Name="ID" />
@@ -823,16 +747,27 @@ warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined
           <EntitySet Name="Giamgias" EntityType="Self.Giamgia" />
           <EntitySet Name="GioiThieux" EntityType="Self.GioiThieu" />
           <EntitySet Name="LinkWebsites" EntityType="Self.LinkWebsite" />
-          <EntitySet Name="Menus" EntityType="Self.Menu" />
-          <EntitySet Name="MenuSubs" EntityType="Self.MenuSub" />
-          <EntitySet Name="MenuSubSubs" EntityType="Self.MenuSubSub" />
           <EntitySet Name="News" EntityType="Self.News" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="Services" EntityType="Self.Service" />
           <EntitySet Name="Solutions" EntityType="Self.Solution" />
           <EntitySet Name="SupportOnlines" EntityType="Self.SupportOnline" />
           <EntitySet Name="Videos" EntityType="Self.Video" />
+          <EntitySet Name="Categories" EntityType="RCPModel.Category" />
         </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="Location" Type="Byte" />
+          <Property Name="Father" Type="Int32" />
+          <Property Name="GrandFather" Type="Int32" />
+          <Property Name="GreatGrandFather" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -977,42 +912,6 @@ warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Menus">
-            <EntityTypeMapping TypeName="RCPModel.Menu">
-              <MappingFragment StoreEntitySet="Menu">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="NameE" ColumnName="NameE" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MenuSubs">
-            <EntityTypeMapping TypeName="RCPModel.MenuSub">
-              <MappingFragment StoreEntitySet="MenuSub">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="NameE" ColumnName="NameE" />
-                <ScalarProperty Name="IDMenu" ColumnName="IDMenu" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MenuSubSubs">
-            <EntityTypeMapping TypeName="RCPModel.MenuSubSub">
-              <MappingFragment StoreEntitySet="MenuSubSub">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="NameE" ColumnName="NameE" />
-                <ScalarProperty Name="IDMenu" ColumnName="IDMenu" />
-                <ScalarProperty Name="IDMenuSub" ColumnName="IDMenuSub" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="News">
             <EntityTypeMapping TypeName="RCPModel.News">
               <MappingFragment StoreEntitySet="News">
@@ -1116,6 +1015,20 @@ warning 6002: The table/view 'RCP.dbo.Video' does not have a primary key defined
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="RCPModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="GreatGrandFather" ColumnName="GreatGrandFather" />
+                <ScalarProperty Name="GrandFather" ColumnName="GrandFather" />
+                <ScalarProperty Name="Father" ColumnName="Father" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="NameE" ColumnName="NameE" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

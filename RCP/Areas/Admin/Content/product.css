@@ -1,5 +1,5 @@
 ﻿body {
-
+    
 }
 
 #create{
@@ -10,4 +10,32 @@
 .upload-file-image{
     display:inherit;
 
+}
+.container-fluid{
+    background-color:burlywood;
+}
+.input-option{
+    display: -webkit-box;
+}
+.note-input{
+    margin-top: 10px;
+    margin-left:5px;
+}
+
+.card-body{
+    background-color: #167734;
+}
+
+.btn-save {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn-save:hover {
+    background-color: RoyalBlue;
 }

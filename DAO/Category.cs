@@ -12,13 +12,15 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class MenuSub
+    public partial class Category
     {
         public int ID { get; set; }
         public string Name { get; set; }
         public string NameE { get; set; }
-        public Nullable<int> IDMenu { get; set; }
         public Nullable<byte> Status { get; set; }
         public Nullable<byte> Location { get; set; }
+        public Nullable<int> Father { get; set; }
+        public Nullable<int> GrandFather { get; set; }
+        public Nullable<int> GreatGrandFather { get; set; }
     }
 }

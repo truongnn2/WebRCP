@@ -1,0 +1,86 @@
+﻿@model PagedList.IPagedList<DAO.Product>
+@using PagedList.Mvc
+@{ 
+    ViewBag.title = "Danh sách sản phẩm";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Ảnh
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            DateCreate
+        </th>
+        <th>
+            IsHot
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            ViewCount
+        </th>
+        <th>
+            PromotionPrice
+        </th>
+        <th>
+            IsMostView
+        </th>
+        <th>
+            IsNew
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsHot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PromotionPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsMostView)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsNew)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+ <br />
+Trang @(Model.PageCount < Model.PageNumber ? 0: Model.PageNumber)/ @Model.PageCount
+@Html.PagedListPager(Model,page=>Url.Action("GetPaging","Products", new { page}),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod ="GET",UpdateTargetId = "product_area"}))

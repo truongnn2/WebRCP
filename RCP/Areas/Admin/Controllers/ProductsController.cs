@@ -1,26 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using BLL;
+using BLL.Entity;
 using DAO;
+using PagedList;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Net;
+using System.Web.Mvc;
 
 namespace RCP.Areas.Admin.Controllers
 {
     public class ProductsController : Controller
     {
         private RCPEntities db = new RCPEntities();
+        private ProductBLL productContext = new ProductBLL();
+        private const int PageSize = 20;
 
-        // GET: Admin/Products
+        #region GetAll List Product
         public ActionResult Index()
         {
-            return View(db.Products.ToList());
+            return View(productContext.GetAll().ToPagedList(1, PageSize));
         }
+        #endregion
 
-        // GET: Admin/Products/Details/5
+        #region Page list
+        public PartialViewResult GetPaging(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            return PartialView("_PartialViewProducts", productContext.GetAll().ToPagedList(pageNumber, PageSize));
+        }
+        #endregion
+
+        #region Product Detail
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,15 +44,30 @@ namespace RCP.Areas.Admin.Controllers
             }
             return View(product);
         }
+        #endregion
 
-        // GET: Admin/Products/Create
+        #region Create- View
         public ActionResult Create()
         {
+            CategoryBLL contextCategory = new CategoryBLL();
+            List<Category> lstCategory = contextCategory.GetAll();
+            List<Category> lstCategorNo1 = new List<Category>();
+
+
+            foreach (var item in lstCategory)
+            {
+                if(item.Father == null && item.GrandFather == null && item.GreatGrandFather == null)
+                {
+                    lstCategorNo1.Add(item);
+                }
+            }
+            ViewBag.Category = lstCategorNo1;
             return View();
         }
+        #endregion
 
         // POST: Admin/Products/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -74,7 +99,7 @@ namespace RCP.Areas.Admin.Controllers
         }
 
         // POST: Admin/Products/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]

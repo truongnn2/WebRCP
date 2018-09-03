@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 namespace DAO
 {
     public class ProductDAO
-
     {
+        public List<Product> GetAll()
+        {
+            using (RCPEntities db = new RCPEntities())
+            {
+                return db.Products.ToList();
+            }
+        }
     }
 }
