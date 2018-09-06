@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\CategoryBLL.cs" />
+    <Compile Include="Entity\MenuSubBLL.cs" />
+    <Compile Include="Entity\MenuBLL.cs" />
     <Compile Include="Entity\ProductBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

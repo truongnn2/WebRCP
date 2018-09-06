@@ -1,7 +1,7 @@
 ﻿using BLL;
-using BLL.Entity;
 using DAO;
 using PagedList;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Net;
@@ -13,6 +13,8 @@ namespace RCP.Areas.Admin.Controllers
     {
         private RCPEntities db = new RCPEntities();
         private ProductBLL productContext = new ProductBLL();
+        private MenuBLL menuContext = new MenuBLL();
+        private MenuSubBLL menuSubContext = new MenuSubBLL();
         private const int PageSize = 20;
 
         #region GetAll List Product
@@ -46,25 +48,45 @@ namespace RCP.Areas.Admin.Controllers
         }
         #endregion
 
-        #region Create- View
         public ActionResult Create()
         {
-            CategoryBLL contextCategory = new CategoryBLL();
-            List<Category> lstCategory = contextCategory.GetAll();
-            List<Category> lstCategorNo1 = new List<Category>();
-
-
-            foreach (var item in lstCategory)
-            {
-                if(item.Father == null && item.GrandFather == null && item.GreatGrandFather == null)
-                {
-                    lstCategorNo1.Add(item);
-                }
-            }
-            ViewBag.Category = lstCategorNo1;
+            ViewBag.lstMenu = menuContext.GetAll();
             return View();
         }
-        #endregion
+
+        public ActionResult ListCatSub()
+        {
+            int? idCat = int.Parse(Request.Form["cat"]);
+            List<MenuSub> vList = menuSubContext.GetAll(idCat);
+            if (vList != null)
+            {
+                Response.ContentType = "text/xml";
+                Response.Write("<?xml version='1.0' encoding='utf-8'?>");
+                Response.Write("<options>");
+                Response.Write("<option>");
+                Response.Write("<value> </value>");
+                Response.Write("<text>Chọn</text>");
+                Response.Write("</option>");
+                if (vList != null && vList.Count > 0)
+                {
+                    IEnumerator ie = vList.GetEnumerator();
+                    while (ie.MoveNext())
+                    {
+                        MenuSub vList_ = (MenuSub)ie.Current;
+                        Response.Write("<option>");
+                        Response.Write("<value>" + vList_.ID + "</value>");
+                        Response.Write("<text>" + vList_.Name.Replace('&', '|') + "</text>");
+                        Response.Write("</option>");
+                    }
+                }
+                Response.Write("</options>");
+                Response.End();
+            }
+            Response.Write("");
+            Response.End();
+           
+            return View();
+        }
 
         // POST: Admin/Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for

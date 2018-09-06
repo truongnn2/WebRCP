@@ -37,12 +37,14 @@ namespace DAO
         public virtual DbSet<Giamgia> Giamgias { get; set; }
         public virtual DbSet<GioiThieu> GioiThieux { get; set; }
         public virtual DbSet<LinkWebsite> LinkWebsites { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
+        public virtual DbSet<MenuSub> MenuSubs { get; set; }
+        public virtual DbSet<MenuSubSub> MenuSubSubs { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Solution> Solutions { get; set; }
         public virtual DbSet<SupportOnline> SupportOnlines { get; set; }
         public virtual DbSet<Video> Videos { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
     }
 }

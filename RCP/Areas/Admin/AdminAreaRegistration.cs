@@ -19,6 +19,11 @@ namespace RCP.Areas.Admin
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+            context.MapRoute(
+                "Admin_Product_Create",
+                "Admin/{controller}/{action}/{id}",
+                new { action = "Create", id = UrlParameter.Optional }
+            );
         }
     }
 }

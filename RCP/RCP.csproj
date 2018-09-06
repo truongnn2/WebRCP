@@ -313,8 +313,10 @@
     <Content Include="Areas\Admin\Images\logo-mini.svg" />
     <Content Include="Areas\Admin\Images\logo.svg" />
     <Content Include="Areas\Admin\Images\samples\weather.svg" />
+    <Content Include="Areas\Admin\Scripts\ajaxProducts.js" />
     <Content Include="Areas\Admin\Scripts\chart.js" />
     <Content Include="Areas\Admin\Scripts\dashboard.js" />
+    <Content Include="Areas\Admin\Scripts\jquery-3.3.1.min.js" />
     <Content Include="Areas\Admin\Scripts\maps.js" />
     <Content Include="Areas\Admin\Scripts\misc.js" />
     <Content Include="Areas\Admin\Scripts\off-canvas.js" />
